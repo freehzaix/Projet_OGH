@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('realisations', function (Blueprint $table) {
             $table->id();
+            $table->string('titre');
+            $table->longText('description')->nullable();
+            $table->longText('lien_realisation')->nullable();
+            $table->date('date_debut')->nullable();
+            $table->date('date_fin')->nullable();
             $table->timestamps();
         });
     }

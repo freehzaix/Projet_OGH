@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('mensurations', function (Blueprint $table) {
             $table->id();
+            $table->string('taille_haut');
+            $table->string('taille_bas');
+            $table->string('pointure');
+            $table->string('taille_cm');
             $table->timestamps();
         });
     }

@@ -13,6 +13,16 @@ return new class extends Migration
     {
         Schema::create('modeles', function (Blueprint $table) {
             $table->id();
+            $table->string('nom');
+            $table->string('prenom');
+            $table->date('date_naissance')->nullable();
+            $table->string('sexe')->nullable();
+            $table->string('taille')->nullable();
+            $table->string('poids')->nullable();
+            $table->string('langues')->nullable();
+            $table->longText('photo_profil')->nullable();
+            $table->longText('cv')->nullable();
+            $table->foreignId('mensuration_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
